@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>学生信息管理中心(后台)</title>
+</head>
+
+<body bgcolor="#99cc00">
+<a href="?p=Admin&c=Student&a=index">学生管理</a> | 
+<a href="?p=Admin&c=News&a=index">新闻管理</a><hr />
+<div style="text-align:center;padding-bottom:10px;">
+	<h2>修改学生信息(后台)</h2>
+	<a href="javascript:history.go(-1)">返回列表页</a>
+</div>
+<form name="form1" method="post" action="?p=Admin&c=Student&a=update">
+<table width="400" border="1" bordercolor="#ccc" align="center" rules="all" cellpadding="3">
+	<tr>
+		<td width="80" align="right">姓名：</td>
+		<td><input type="text" name="name" value="<?php echo $arr['name']?>"></td>
+	</tr>
+	<tr>
+		<td width="80" align="right">性别：</td>
+		<td>
+			<input type="radio" name="sex" value="男"<?php if($arr['sex']=='男'){echo " checked";}?>>男
+			<input type="radio" name="sex" value="女"<?php if($arr['sex']=='女'){echo " checked";}?>>女
+		</td>
+	</tr>
+	<tr>
+		<td width="80" align="right">年龄：</td>
+		<td><input type="text" name="age" value="<?php echo $arr['age']?>" size="2" maxlength="2"></td>
+	</tr>
+	<tr>
+		<td width="80" align="right">学历：</td>
+		<td>
+			<select name="edu">
+				<option value="初中"<?php if($arr['edu']=='初中'){echo " selected";}?>>初中</option>
+				<option value="高中"<?php if($arr['edu']=='高中'){echo " selected";}?>>高中</option>
+				<option value="大专"<?php if($arr['edu']=='大专'){echo " selected";}?>>大专</option>
+				<option value="大本"<?php if($arr['edu']=='大本'){echo " selected";}?>>大本</option>
+				<option value="研究生"<?php if($arr['edu']=='研究生'){echo " selected";}?>>研究生</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td width="80" align="right">工资：</td>
+		<td><input type="text" name="salary" value="<?php echo $arr['salary']?>"></td>
+	</tr>
+	<tr>
+		<td width="80" align="right">奖金：</td>
+		<td><input type="text" name="bonus" value="<?php echo $arr['bonus']?>"></td>
+	</tr>
+	<tr>
+		<td width="80" align="right">籍贯：</td>
+		<td><input type="text" name="city" value="<?php echo $arr['city']?>"></td>
+	</tr>
+	<tr>
+		<td width="80" align="right">&nbsp;</td>
+		<td>
+			<input type="submit" value="提交">
+			<input type="hidden" name="id" value="<?php echo $id?>">
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
